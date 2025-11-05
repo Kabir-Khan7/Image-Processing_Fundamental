@@ -11,8 +11,6 @@ A concise, well-documented guide that explains the math, code, and intuition beh
 1. [Quick Start](#quick-start)
 2. [Repository Layout](#repository-layout)
 3. [How to Run](#how-to-run)
-4. [Concepts, Math & Code (one-page reference)](#concepts-math--code-one-page-reference)
-
    * [Color Spaces](#color-spaces)
    * [Contours](#contours)
    * [Edge Detection](#edge-detection)
@@ -21,9 +19,8 @@ A concise, well-documented guide that explains the math, code, and intuition beh
    * [Image Blurring (Smoothing)](#image-blurring-smoothing)
    * [Thresholding (Segmentation)](#thresholding-segmentation)
    * [Cropping (Region of Interest)](#cropping-region-of-interest)
-5. [Practical Tips & Parameter Guide](#practical-tips--parameter-guide)
-6. [Future Enhancements](#future-enhancements)
-7. [License & Contact](#license--contact)
+4. [Future Enhancements](#future-enhancements)
+5. [License & Contact](#license--contact)
 
 ---
 
@@ -407,14 +404,7 @@ cv2.destroyAllWindows()
 
 ## License & Contact
 
-* **Author:** Kabir Khurshid — update your GitHub link: `https://github.com/Kabir-Khan7`
-
-Perfect, Kabir — below is a **comprehensive, theoretical + conceptual explanation** of every image-processing method you covered:
-(color spaces, contours, edge detection, blurring, thresholding, drawing, resizing, and cropping).
-
-This version goes beyond code — it focuses on *why* each method exists, *how* it works mathematically, and *when* to use it in a real-world computer vision pipeline.
-You can directly add this to your README.md as a deep learning / theoretical explanation section (for example under “Conceptual Understanding”).
-
+* **Author:** Kabir Khurshid — https://github.com/Kabir-Khan7
 ---
 
 # 🧩 Conceptual & Theoretical Understanding of Image Processing Fundamentals
