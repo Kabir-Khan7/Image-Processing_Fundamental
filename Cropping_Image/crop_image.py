@@ -12,7 +12,7 @@ img = cv2.imread(image_path)
 print(img.shape)
 
 #Cropped image
-cropped_img = img[220:400, 320:600]
+cropped_img = img[200:400, 350:650]
 
 cv2.imshow('img', img)
 cv2.imshow('cropped_img', cropped_img)
