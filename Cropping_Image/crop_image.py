@@ -18,4 +18,3 @@ cv2.imshow('img', img)
 cv2.imshow('cropped_img', cropped_img)
 cv2.waitKey(0)
 
-#Hello there is a updated version
