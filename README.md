@@ -19,8 +19,7 @@ A concise, well-documented guide that explains the math, code, and intuition beh
    * [Image Blurring (Smoothing)](#image-blurring-smoothing)
    * [Thresholding (Segmentation)](#thresholding-segmentation)
    * [Cropping (Region of Interest)](#cropping-region-of-interest)
-4. [Future Enhancements](#future-enhancements)
-5. [License & Contact](#license--contact)
+4. [License & Contact](#license--contact)
 
 ---
 
@@ -35,8 +34,8 @@ source venv/bin/activate
 # venv\Scripts\activate
 
 pip install opencv-python numpy matplotlib
-git clone https://github.com/<your-username>/<your-repo>.git
-cd <your-repo>
+git clone https://github.com/Kabir-Khan7/Image-Processing_Fundamental.git
+cd <Image-Processing_Fundamenta;>
 python color_spaces.py   # try any script: contours.py, edge_detection.py, etc.
 ```
 
