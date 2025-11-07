@@ -6,7 +6,7 @@ from ultralytics import YOLO
 # -------------------------------------------------
 # 1. CONFIG
 # -------------------------------------------------
-VIDEO_IN   = "car2.mp4"
+VIDEO_IN   = "car1.mp4"
 VIDEO_OUT  = "output_yolo_cars.mp4"
 CONF_THRESH = 0.5   # Confidence threshold (0.3–0.7)
 MODEL_NAME = "yolov8n.pt"  # Nano (fast) or yolov8s.pt (more accurate)
