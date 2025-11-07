@@ -48,7 +48,7 @@ while True:
     frame_idx += 1
     progress = (frame_idx / total) * 100 if total else 0
     # YOLO inference
-    results = model(frame, conf=CONF_THRESH, classes=list(PERSON_CLASSES.keys()), verbose=False)[0]
+    results = model(frame, conf=CONF_THRESH, classes=list(PERSON_CLASSES.keys()), verbose=False )[0]
     boxes = results.boxes
     cur_persons = 0
     if boxes is not None:
