@@ -1,13 +1,10 @@
-# surveillance_person_monitoring.py – Smart Office Surveillance using YOLOv8
 import cv2
 import os
 import csv
 import time
 from ultralytics import YOLO
 
-# -------------------------------------------------
 # 1. CONFIG
-# -------------------------------------------------
 VIDEO_IN = "office_video.mp4"
 VIDEO_OUT = "output_surveillance.mp4"
 CONF_THRESH = 0.5
@@ -16,15 +13,11 @@ MODEL_NAME = "yolov8n.pt"
 IDLE_THRESHOLD = 10          # Seconds with no people before idle alert
 CROWD_THRESHOLD = 5          # Crowding alert if count exceeds this number
 
-# -------------------------------------------------
 # 2. LOAD YOLO MODEL
-# -------------------------------------------------
 model = YOLO(MODEL_NAME)
 print(f"YOLOv8 loaded: {MODEL_NAME}")
 
-# -------------------------------------------------
 # 3. VIDEO SETUP
-# -------------------------------------------------
 if not os.path.exists(VIDEO_IN):
     raise FileNotFoundError(f"Video not found: {VIDEO_IN}")
 
@@ -38,9 +31,7 @@ out = cv2.VideoWriter(VIDEO_OUT, fourcc, fps, (w, h))
 print(f"Processing {VIDEO_IN} → {VIDEO_OUT}")
 print(f"Resolution: {w}x{h} | FPS: {fps:.1f}")
 
-# -------------------------------------------------
 # 4. INITIALIZE VARIABLES
-# -------------------------------------------------
 frame_idx = 0
 total_persons = 0
 
@@ -50,9 +41,7 @@ alert_triggered = False
 
 csv_data = []
 
-# -------------------------------------------------
 # 5. DETECTION LOOP
-# -------------------------------------------------
 while True:
     ret, frame = cap.read()
     if not ret:
@@ -67,9 +56,7 @@ while True:
     current_count = len(boxes) if boxes is not None else 0
     total_persons += current_count
 
-    # -------------------------------------------------
-    # ⭐ NEW & IMPROVED ALERT LOGIC
-    # -------------------------------------------------
+    #IMPROVED ALERT LOGIC
     now = time.time()
     alert_message = ""
     alert_color = (0, 0, 255)  # Red default
@@ -98,9 +85,7 @@ while True:
         alert_message = f"⚠️ High Activity ({current_count})"
         alert_color = (0, 165, 255)  # Orange
 
-    # -------------------------------------------------
     # DRAWING BOUNDING BOXES
-    # -------------------------------------------------
     if boxes is not None:
         for box in boxes:
             x1, y1, x2, y2 = map(int, box.xyxy[0].cpu().numpy())
@@ -113,9 +98,7 @@ while True:
             cv2.putText(frame, f"Person {conf:.0%}", (x1, y1 - 8),
                         cv2.FONT_HERSHEY_SIMPLEX, 0.65, (0, 255, 0), 2)
 
-    # -------------------------------------------------
     # ON-SCREEN TEXT OVERLAY (Clean & Readable)
-    # -------------------------------------------------
     cv2.putText(frame, f"Frame: {frame_idx}", (10, 30),
                 cv2.FONT_HERSHEY_SIMPLEX, 0.8, (255, 255, 255), 2)
 
@@ -136,7 +119,7 @@ while True:
     if cv2.waitKey(int(1000 / fps)) & 0xFF == ord('q'):
         break
 
-    # Save row for CSV
+    # Save raw for CSV
     csv_data.append({
         "frame": frame_idx,
         "timestamp_sec": round(timestamp, 2),
@@ -144,9 +127,7 @@ while True:
         "alert": alert_message
     })
 
-# -------------------------------------------------
 # 6. CLEANUP & SUMMARY
-# -------------------------------------------------
 cap.release()
 out.release()
 cv2.destroyAllWindows()
