@@ -173,3 +173,4 @@ with open(csv_out, mode="w", newline="", encoding="utf-8") as f:
     writer.writerows(csv_data)
 
 print(f"Detection log saved as: {csv_out}")
+print("Done.")
