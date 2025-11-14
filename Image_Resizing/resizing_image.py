@@ -21,3 +21,4 @@ print(resized_img.shape)
 cv2.imshow('img', img)
 cv2.imshow('resized_img', resized_img)
 cv2.waitKey(0)
+

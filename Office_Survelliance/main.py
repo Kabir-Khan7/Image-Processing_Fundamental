@@ -5,7 +5,7 @@ import time
 from ultralytics import YOLO
 
 # 1. CONFIG
-VIDEO_IN = "office_video.mp4"
+VIDEO_IN = "office_video2.mp4"
 VIDEO_OUT = "output_surveillance.mp4"
 CONF_THRESH = 0.5
 MODEL_NAME = "yolov8n.pt"
