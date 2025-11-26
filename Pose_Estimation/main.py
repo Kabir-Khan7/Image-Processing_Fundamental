@@ -4,4 +4,4 @@ from ultralytics import YOLO
 model = YOLO("yolov8n-pose.pt")
 
 #Predict with the model
-results= model.track(source="people.mp4", show=True, save=True, verbose=True)
+results= model.track(source="people.mp4", show=True, save=True, verbose=False)
